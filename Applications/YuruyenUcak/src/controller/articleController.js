@@ -6,17 +6,9 @@ exports.getArticleById = function(id, successCallback, failureCallback) {
         function(err, data) {
             var response;
             if (err) {
-            response = {
-                "error": true,
-                "message": "Error fetching data"
-                };
-            failureCallback(response);
+                failureCallback(err);
             } else {
-                response = {
-                    "error": false,
-                    "message": data
-                };
-            successCallback(response);
+                successCallback(data);
             }
         }
     );
@@ -29,17 +21,9 @@ exports.getArticleBy = function(credentialMap, successCallback, failureCallback)
         function(err, data) {
             var response;
             if (err) {
-            response = {
-                "error": true,
-                "message": "Error fetching data"
-                };
-            failureCallback(response);
+                failureCallback(err);
             } else {
-                response = {
-                    "error": false,
-                    "message": data
-                };
-            successCallback(response);
+                successCallback(data);
             }
         }
     );
@@ -62,17 +46,9 @@ exports.createArticle = function(params, successCallback, failureCallback) {
         function(err) {
             var response;
             if (err) {
-                response = {
-                    "error": true,
-                    "message": "Error adding data"
-                };
-                failureCallback(response);
+                failureCallback(err);
             } else {
-                response = {
-                    "error": false,
-                    "message": "Data added"
-                };
-                successCallback(response);
+                successCallback(data);
             }
         }
     );
@@ -82,7 +58,7 @@ exports.updateArticle = function(params, successCallback, failureCallback) {
     var article = new articleSchema();
     
     exports.getArticleById(params.id,
-        function successCallback() {
+        function successCallback(){
             
             if (params.title) {
                 article.title = params.title;   
@@ -116,17 +92,9 @@ exports.updateArticle = function(params, successCallback, failureCallback) {
                 function(err) {
                     var response;
                     if (err) {
-                        response = {
-                            "error": true,
-                            "message": "An error occured during updating content"
-                        };
-                        failureCallback(response);
+                        failureCallback(err);
                     } else {
-                        response = {
-                            "error": false,
-                            "message": "Successfully updated article"
-                        };
-                        successCallback(response);
+                        successCallback(data);
                     }
                 }
             );
@@ -162,7 +130,7 @@ exports.deleteArticle = function(id, successCallback, failureCallback) {
                     failureCallback(response);
                 } else {
                     response = {
-                        "error": true,
+                        "error": false,
                         "message": "Data associated with " + id + "is deleted"
                     };
                     successCallback(response);
