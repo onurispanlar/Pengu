@@ -1,1 +1,14 @@
-<div class="indexHeader"></div>
+
+<div class="upperDiv" id="upperDiv">
+    <button class="btn btn-lg btn-primary btn-block" id="addBookButton" ng-click="addBook()">Add Book</button>
+    <button class="btn btn-lg btn-primary btn-block" id="addArticleButton" ng-click="addArticle()">Add Article up</button>
+    <button ng-if="!userLoggedIn" class="btn btn-lg btn-primary btn-block" id="loginButton" ng-click="login()">Login</button>
+    <button ng-if="!userLoggedIn" class="btn btn-lg btn-primary btn-block" id="signupButton" ng-click="signup()">Sign up</button>
+    <button ng-if="userLoggedIn" class="btn btn-lg btn-primary btn-block" id="userDetailButton" ng-click="userDetail()">ASD {{user.username}}</button>
+</div>
+<div class="book-list" id="book-list">
+    <div ng-repeat="book in books">
+        <div class="book-display" id="book-display"> {{book.title}} </div>
+    </div>
+</div>
+
