@@ -2,43 +2,42 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		clean: ["www"],
 		concat: {
 			js: {
 				src: 'src/js/**/*.js',
-				dest: 'www/js/main.js'
+				dest: '../../Web/js/main.js'
 			},
 			css: {
 				src: 'src/css/*.css',
-				dest: 'www/css/main.css'
+				dest: '../../Web/css/main.css'
 			}
 		},
 		uglify: {
-			'www/js/main.min.js': ['www/js/main.js']
+			'../../Web/js/main.min.js': ['../../Web/js/main.js']
 		},
 		copy: {
 			img: {
 				expand: true,
 				src: 'src/img/*',
-				dest: 'www/img/',
+				dest: '../../Web/img',
 				flatten: true
 			},
 			html: {
 				cwd: 'src/js/',
 				src: '**/*.html',
-				dest: 'www/templates/',
+				dest: '../../Web/templates/',
 				expand: true
 			},
 			index: {
 				expand: true,
 				src: ['src/*.html'],
-				dest: 'www/',
+				dest: '../../Web/',
 				filter: 'isFile',
 				flatten: true
 			}
 		},
 		cssmin: {
-			'www/css/main.min.css': 'www/css/main.css'
+			'../../Web/css/main.min.css': '../../Web/css/main.css'
 		}
 	});
 
@@ -48,6 +47,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('default', ['clean', 'copy', 'concat', 'uglify', 'cssmin']);
+	grunt.registerTask('default', ['copy', 'concat', 'uglify', 'cssmin']);
 
 };
