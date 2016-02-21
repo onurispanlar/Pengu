@@ -54,7 +54,7 @@ router.route("/users/:username")
     });
   })
   .put(function(req, res) {
-    userCtrl.updateUser(req.body, function(response) {
+    userCtrl.updateUser(req.params.username, req.body, function(response) {
         res.json(response);
     }, function(err) {
         res.json("database error");
@@ -194,14 +194,14 @@ router.route("/addBook")
 
 router.route("/books/:bookId")
   .get(function(req, res) {
-    bookCtrl.getBook(req.params.username, function(response) {
+    bookCtrl.getBook(req.params.bookId, function(response) {
         res.json(response);
     }, function(err) {
         res.json("database error");
     });
   })
   .put(function(req, res) {
-    bookCtrl.update(req.body, function(response) {
+    bookCtrl.update(req.params.bookId, req.body, function(response) {
         res.json(response);
     }, function(err) {
         res.json("database error");
