@@ -58,20 +58,20 @@ exports.getUser = function(username, successCallback, failureCallback) {
     });
 };
 
-exports.updateUser = function(params, successCallback, failureCallback) {
-    userSchema.findOne({ username: params.username }, function(err, db) {
+exports.updateUser = function(username, params, successCallback, failureCallback) {
+    userSchema.findOne({ username: username }, function(err, db) {
         if (err) {
             console.log(err);
             failureCallback(err);
         } else {
             if (params.email !== undefined) {
-              db.email = params.email;
+                db.email = params.email;
             }
             if (params.password !== undefined) {
-              db.password = params.password;
+                db.password = params.password;
             }
             if (params.username !== undefined) {
-              db.username = params.username;
+                db.username = params.username;
             }
             db.save(function(err, data) {
                 if (err) {
