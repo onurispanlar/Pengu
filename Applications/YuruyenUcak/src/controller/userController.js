@@ -20,7 +20,7 @@ exports.addNewUser = function(params, successCallback, failureCallback) {
     });
 };
   
-exports.requestSeesionId = function(username, successCallback, failureCallback) {
+exports.requestSessionId = function(username, successCallback, failureCallback) {
     userSchema.findOne({ username: username }, function (err, db) {
         sessionCtrl.createSessionId(function (sessionId) {
             db.sessionId = sessionId;
