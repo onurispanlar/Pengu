@@ -11,8 +11,7 @@ var bookSchema  = {
     "language": String,
     // Publisher Id for companies
     "publisherId": String,
-    "tags": [String],
-    "content": [String]
+    "tags": [String]
 };
 // create model if not exists.
 module.exports = mongoose.model('bookSchema', bookSchema);

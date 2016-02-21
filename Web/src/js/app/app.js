@@ -20,11 +20,27 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'userController'
         })
         .when('/article', {
-            templateUrl: 'templates/article/article.html',
-            controller: 'articleController'
+            templateUrl: 'templates/book/articlePreview.html',
+            controller: 'bookController'
+        })
+        .when('/articleEdit', {
+            templateUrl: 'templates/book/articleEdit.html',
+            controller: 'bookController'
+        })
+        .when('/articleAdd', {
+            templateUrl: 'templates/book/articleAdd.html',
+            controller: 'bookController'
         })
         .when('/book', {
-            templateUrl: 'templates/book/book.html',
+            templateUrl: 'templates/book/bookPreview.html',
+            controller: 'bookController'
+        })
+        .when('/bookEdit', {
+            templateUrl: 'templates/book/bookEdit.html',
+            controller: 'bookController'
+        })
+        .when('/bookAdd', {
+            templateUrl: 'templates/book/bookAdd.html',
             controller: 'bookController'
         });
 }]);

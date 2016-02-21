@@ -14,7 +14,7 @@ var articleSchema  = {
     // Publisher Id for companies
     "publisherId": String,
     "tags": [String],
-    "content": [String]
+    "content": String
 };
 // create model if not exists.
 module.exports = mongoose.model('articleSchema', articleSchema);
