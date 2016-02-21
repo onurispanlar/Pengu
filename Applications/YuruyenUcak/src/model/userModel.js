@@ -11,5 +11,3 @@ var userSchema  = {
 };
 // create model if not exists.
 module.exports = mongoose.model('userSchema', userSchema);
-
-mongoose.disconnect();
