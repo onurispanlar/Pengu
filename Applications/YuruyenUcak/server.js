@@ -164,11 +164,10 @@ router.route("/users/:id")
                 var params = {};
                 
                 params.title = req.body.title;
-                params.author_id = user._id;
-                params.pulished_date = req.body.pulished_date;
-                params.created_date = req.body.created_date;
-                params.updated_date = req.body.updated_date;
-                params.page_count = req.body.page_count;
+                params.authorId = user._id;
+                params.publishedDate = req.body.publishedDate;
+                params.updatedDate = req.body.updatedDate;
+                params.pageCount = req.body.pageCount;
                 params.language = req.body.language;
                 params.tags = req.body.tags;
                 params.content = req.body.content;
@@ -216,11 +215,10 @@ router.route("/users/:id")
             var params = {};
             
             params.title = req.body.title;
-            params.author_id = params.author_id;
-            params.pulished_date = req.body.pulished_date;
-            params.created_date = req.body.created_date;
-            params.updated_date = req.body.updated_date;
-            params.page_count = req.body.page_count;
+            params.authorId = params.authorId;
+            params.pulishedDate = req.body.pulishedDate;
+            params.updatedDate = req.body.updatedDate;
+            params.pageCount = req.body.pageCount;
             params.language = req.body.language;
             params.tags = req.body.tags;
             params.content = req.body.content;
@@ -249,31 +247,6 @@ router.route("/users/:id")
                 res.json(response);
             });
     });
-
-router.route("/addBook")
-  .post(function(req, res) {
-    bookCtrl.addNewBook(req.body, function(response) {
-        res.json(response);
-    }, function(err) {
-        res.json("database error");
-    });
-  });
-
-router.route("/books/:bookId")
-  .get(function(req, res) {
-    bookCtrl.getBook(req.params.username, function(response) {
-        res.json(response);
-    }, function(err) {
-        res.json("database error");
-    });
-  })
-  .put(function(req, res) {
-    bookCtrl.update(req.body, function(response) {
-        res.json(response);
-    }, function(err) {
-        res.json("database error");
-    });
-  });
 
 app.use('/', router);
 
