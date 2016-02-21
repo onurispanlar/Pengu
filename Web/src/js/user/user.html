@@ -1,0 +1,17 @@
+
+<div class="upperDiv" id="upperDiv">
+    <button class="btn btn-lg btn-primary btn-block" id="addBookButton" ng-click="addBook()">Add Book</button>
+    <button class="btn btn-lg btn-primary btn-block" id="addArticleButton" ng-click="addArticle()">Add Article up</button>
+</div>
+
+<div class="user-book-list" id="user-book-list">
+    <div ng-repeat="book in userBooks">
+        <div class="user-book-display" id="user-book-display"> {{book.title}} </div>
+    </div>
+</div>
+
+<div class="user-article-list" id="user-article-list">
+    <div ng-repeat="article in userArticles">
+        <div class="user-article-display" id="user-article-display"> {{article.title}} </div>
+    </div>
+</div>
