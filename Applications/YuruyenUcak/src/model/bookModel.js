@@ -5,16 +5,14 @@ var mongoSchema = mongoose.Schema;
 // create schema
 var bookSchema  = {
     "title" : {type: String, required: true},
-    "author_id" : {type: String, required: true},
+    "authorId" : {type: [Number], required: true},
     "articles": [Number],
-    "updated_date": Date,
+    "updatedDate": Date,
     "language": String,
     // Publisher Id for companies
-    "publisher_id": String,
+    "publisherId": String,
     "tags": [String],
     "content": [String]
 };
 // create model if not exists.
 module.exports = mongoose.model('bookSchema', bookSchema);
-
-mongoose.disconnect();

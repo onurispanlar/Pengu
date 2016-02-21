@@ -18,5 +18,3 @@ var articleSchema  = {
 };
 // create model if not exists.
 module.exports = mongoose.model('articleSchema', articleSchema);
-
-mongoose.disconnect();

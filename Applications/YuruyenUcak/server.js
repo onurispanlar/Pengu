@@ -183,6 +183,31 @@ router.route("/books")
     });
   });
 
+router.route("/addBook")
+  .post(function(req, res) {
+    bookCtrl.addNewBook(req.body, function(response) {
+        res.json(response);
+    }, function(err) {
+        res.json("database error");
+    });
+  });
+
+router.route("/books/:bookId")
+  .get(function(req, res) {
+    bookCtrl.getBook(req.params.username, function(response) {
+        res.json(response);
+    }, function(err) {
+        res.json("database error");
+    });
+  })
+  .put(function(req, res) {
+    bookCtrl.update(req.body, function(response) {
+        res.json(response);
+    }, function(err) {
+        res.json("database error");
+    });
+  });
+
 app.use('/', router);
 
 app.listen(3000);
