@@ -1,12 +1,18 @@
 var express = require("express"),
     app = express(),
+    cors = require('cors'),
     bodyParser = require("body-parser"),
     router = express.Router(),
     userCtrl = require("./src/controller/userController"),
     articleController = require("./src/controller/articleController");
-    bookCtrl = require("./src/controller/bookController");
+    bookCtrl = require("./src/controller/bookController"),
+    mongoose = require("mongoose");
+    
+mongoose.connect('mongodb://localhost:27017/YuruyenUcak');
   
 app.use(bodyParser.json());
+app.use(cors());
+
 app.use(bodyParser.urlencoded({
   "extended": false
 }));
@@ -20,6 +26,7 @@ router.get("/", function(req, res) {
 
 router.route("/addUser")
   .post(function(req, res) {
+    console.log(req.body)
     userCtrl.addNewUser(req.body, function(response) {
         res.json(response);
     }, function(err) {

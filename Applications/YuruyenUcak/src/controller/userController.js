@@ -15,6 +15,8 @@ exports.addNewUser = function(params, successCallback, failureCallback) {
             console.log(err);
             failureCallback(err);
         } else {
+            console.log("success");
+            console.log(successCallback);
             successCallback(data);
         }
     });
