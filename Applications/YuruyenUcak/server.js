@@ -247,6 +247,14 @@ router.route("/users/:id")
                 res.json(response);
             });
     });
+    
+    router.route("/votes")
+        .get(function(req, res) {
+          res.json({
+              "error": true,
+              "message": "Please specify identifier for articles"
+            });
+        })
 
 app.use('/', router);
 

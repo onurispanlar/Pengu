@@ -4,7 +4,7 @@ mongoose.createConnection('mongodb://localhost:27017/YuruyenUcak');
 var mongoSchema = mongoose.Schema;
 
 var voteSchema  = {
-    "authorId" : {type: String, required: true},
+    "voterId" : {type: String, required: true},
     "createdDate": { type: Date, default: Date.now },
     "updatedDate": Date,
     "bookId": String,

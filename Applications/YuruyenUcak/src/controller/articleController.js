@@ -33,11 +33,10 @@ exports.createArticle = function(params, successCallback, failureCallback) {
     var article = new articleSchema();
     
     article.title = params.title;
-    article.author_id = params.sessionToken;
-    article.pulished_date = params.pulished_date;
-    article.created_date = params.created_date;
-    article.updated_date = params.updated_date;
-    article.page_count = params.page_count;
+    article.authorId = params.sessionToken;
+    article.pulishedDate = params.pulishedDate;
+    article.updatedDate = params.updatedDate;
+    article.pageCount = params.pageCount;
     article.language = params.language;
     article.tags = params.tags;
     article.content = params.content;
@@ -55,25 +54,23 @@ exports.createArticle = function(params, successCallback, failureCallback) {
 };
 
 exports.updateArticle = function(params, successCallback, failureCallback) {
-    var article = new articleSchema();
-    
     exports.getArticleById(params.id,
-        function successCallback(){
+        function successCallback(article){
             
             if (params.title) {
                 article.title = params.title;   
             }
             
-            if (params.pulished_date) {
-                article.pulished_date = params.pulished_date;   
+            if (params.publishedDate) {
+                article.publishedDate = params.publishedDate;
             }
             
-            if (params.updated_date) {
-                article.updated_date = params.updated_date;   
+            if (params.updatedDate) {
+                article.updatedDate = params.updatedDate;   
             }
             
-            if (params.page_count) {
-                article.page_count = params.page_count;   
+            if (params.pageCount) {
+                article.pageCount = params.pageCount;
             }
             
             if (params.language) {
