@@ -1,7 +1,7 @@
 /* global angular*/
 
-var HTTPClientService = function() {
-    var API_URL = window.location.host + ":3000/";
+var HTTPClientService = function(utilsService) {
+    var API_URL = window.location.origin + ":3000/";
 
     function _sendRequest(reqType, url, data, header, successCallback, failureCallback) {
         var httpRequest = new window.XMLHttpRequest(),
@@ -13,18 +13,18 @@ var HTTPClientService = function() {
                 if (httpRequest.status === 200) {
                     responseData = JSON.parse(httpRequest.responseText);
                     if (!responseData.error) {
-                        utils.callFunctionIfExist(successCallback, responseData);
+                        utilsService.callFunctionIfExist(successCallback, responseData);
                     } else {
-                        utils.callFunctionIfExist(failureCallback, responseData);
+                        utilsService.callFunctionIfExist(failureCallback, responseData);
                     }
                 } else {
-                    utils.callFunctionIfExist(failureCallback, httpRequest.error);
+                    utilsService.callFunctionIfExist(failureCallback, httpRequest.error);
                 }
             }
         };
 
         httpRequest.open(reqType, reqUrl);
-        httpRequest.setRequestHeader("Content-type", "application/json");
+        httpRequest.setRequestHeader("Content-Type", "application/json");
         httpRequest.send(JSON.stringify(data));
     }
 
@@ -48,4 +48,4 @@ var HTTPClientService = function() {
 };
 
 angular.module("rest", ["utils"])
-    .factory("httpClientService", ["UtilsService", HTTPClientService]);
+    .factory("httpClientService", ["utilsService", HTTPClientService]);

@@ -15,6 +15,8 @@ exports.addNewUser = function(params, successCallback, failureCallback) {
             console.log(err);
             failureCallback(err);
         } else {
+            console.log("success");
+            console.log(successCallback);
             successCallback(data);
         }
     });
@@ -22,6 +24,7 @@ exports.addNewUser = function(params, successCallback, failureCallback) {
   
 exports.requestSessionId = function(username, successCallback, failureCallback) {
     userSchema.findOne({ username: username }, function (err, db) {
+        console.log("");
         sessionCtrl.createSessionId(function (sessionId) {
             db.sessionId = sessionId;
             db.save(function(err, data) {
