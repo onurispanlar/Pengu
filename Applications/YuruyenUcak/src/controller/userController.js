@@ -29,7 +29,7 @@ exports.requestSessionId = function(username, successCallback, failureCallback) 
                     console.log(err);
                     failureCallback(err);
                 } else {
-                    successCallback(sessionId);
+                    successCallback({sessionId: sessionId});
                 }
             });
         });

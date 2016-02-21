@@ -21,7 +21,6 @@ exports.addNewBook = function(params, successCallback, failureCallback) {
     }
     db.language = params.language;
     db.tags = params.tags;
-    db.content = params.content;
     db.publisherId = params.publisherId;
     db.updatedDate = Date.now();
     
@@ -70,9 +69,6 @@ exports.update = function(bookId, params, successCallback, failureCallback) {
             }
             for (i = 0; i < params.tags.length; i++) {
                 db.tags[db.tags.length] = params.tags[i];
-            }
-            for (i = 0; i < params.content.length; i++) {
-                db.content[db.content.length] = params.content[i];
             }
             db.updatedDate = Date.now();
             db.save(function(err, data) {
