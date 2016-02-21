@@ -164,7 +164,7 @@ router.route("/users/:id")
                 var params = {};
                 
                 params.title = req.body.title;
-                params.author_id = user.id;
+                params.author_id = user._id;
                 params.pulished_date = req.body.pulished_date;
                 params.created_date = req.body.created_date;
                 params.updated_date = req.body.updated_date;
