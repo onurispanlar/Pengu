@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost:27017/demoDb');
+mongoose.createConnection('mongodb://localhost:27017/YuruyenUcak');
 // create instance of Schema
 var mongoSchema = mongoose.Schema;
 // create schema
@@ -11,3 +11,5 @@ var userSchema  = {
 };
 // create model if not exists.
 module.exports = mongoose.model('userSchema', userSchema);
+
+mongoose.disconnect();

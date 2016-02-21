@@ -2,8 +2,9 @@ var express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
     router = express.Router(),
-    userSchema = require("./src/controller/userController"),
+    userCtrl = require("./src/controller/userController"),
     articleController = require("./src/controller/articleController");
+    bookCtrl = require("./src/controller/bookController");
   
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -28,7 +29,7 @@ router.route("/addUser")
 
 router.route("/login")
   .put(function(req, res) {
-    userCtrl.requestSeesionId(req.body.username, function(response) {
+    userCtrl.requestSessionId(req.body.username, function(response) {
         res.json(response);
     }, function(err) {
         res.json("database error");
@@ -77,13 +78,13 @@ router.route("/logout")
   });  
 
 router.route("/articles")
-    .get(function(req, res) {
-      res.json({
-          "error": true,
-          "message": "Please specify identifier for articles"
-        });
-    })
-.post(function(req, res) {
+  .get(function(req, res) {
+    res.json({
+      "error": true,
+      "message": "Please specify identifier for articles"
+    });
+  })
+  .post(function(req, res) {
     var params = {};
 
     userController.getUserByUsername(req.body.username,
@@ -172,6 +173,15 @@ router.route("/articles/:id")
             res.json(response);
         });
 });
+
+router.route("/books")
+  .get(function(req, res) {
+    bookCtrl.getBookList(function(response) {
+        res.json(response);
+    }, function(err) {
+        res.json("database error");
+    });
+  });
 
 app.use('/', router);
 
