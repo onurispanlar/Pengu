@@ -6,14 +6,17 @@
     <meta name="description" content="Walking Plane <3 <3">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Walking Plane</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100,100italic,300italic,400italic,500italic,700italic,900italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-contoller="appController">
 
-    <div ng-view></div>
+  <navbar></navbar>
+  <div ui-view=""></div>
+  <footer></footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
     <script src="//code.jquery.com/jquery-1.11.3.js"></script>
     <script src="js/main.js"></script>
