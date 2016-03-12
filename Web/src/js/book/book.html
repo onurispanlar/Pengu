@@ -1,1 +1,67 @@
-BURASI BOOK HTML
+<div class="content">
+  <div class="row">
+    <div class="pull-right col-xs-6">
+      <div class="col-xs-3"> trending
+      </div>
+      <div class="col-xs-3"> new
+      </div>
+      <div class="col-xs-3"> most read
+      </div>
+      <div class="col-xs-3"> a-z
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <div class="row">
+        <div class="col-xs-3">
+          In progress
+        </div>
+        <div class="col-xs-3">
+          Likes
+        </div>
+        <div class="col-xs-3">
+          Views
+        </div>
+        <div class="col-xs-3">
+          Cht#
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-8">
+      Title / Author
+    </div>
+  </div>
+  <div ng-repeat="book in bookList">
+    <div class="row">
+      <div class="col-xs-3">
+        <div>
+          <div class="col-xs-3">
+            {{book.isCompleted}}
+          </div>
+          <div class="col-xs-3">
+            {{book.likeCount}}
+          </div>
+          <div class="col-xs-3">
+            {{book.viewCount}}
+          </div>
+          <div class="col-xs-3">
+            {{book.chapterCount}}
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-12">
+            {{book.title}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            {{book.author}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

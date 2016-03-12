@@ -14,18 +14,21 @@
   <div class="row">
     <div class="col-xs-3">
       <div class="row">
-        <div class="col-xs-2">
-          Type
+        <div class="col-xs-3">
+          Goal
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-3">
           Likes
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-3">
           Views
+        </div>
+        <div class="col-xs-3">
+          Type
         </div>
       </div>
     </div>
-    <div class="col-xs-9">
+    <div class="col-xs-8">
       Title / Author
     </div>
   </div>
@@ -33,18 +36,21 @@
     <div class="row">
       <div class="col-xs-3">
         <div>
-          <div class="col-xs-2">
-            {{article.image}}
+          <div class="col-xs-3">
+            {{article.percent}}
           </div>
-          <div class="col-xs-5">
+          <div class="col-xs-3">
             {{article.likeCount}}
           </div>
-          <div class="col-xs-5">
+          <div class="col-xs-3">
             {{article.viewCount}}
+          </div>
+          <div class="col-xs-3">
+            {{article.image}}
           </div>
         </div>
       </div>
-      <div class="col-xs-9">
+      <div class="col-xs-8">
         <div class="row">
           <div class="col-xs-12">
             {{article.title}}
