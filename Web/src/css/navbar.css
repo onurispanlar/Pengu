@@ -1,3 +1,30 @@
 .header-logo {
-    background: url(../img/logo32.png);
+    background: url(../img/logo32.png) ;
+    background-size: 100% 100%;
+    width: 50px;
+    height: 35px;
+    background-repeat: no-repeat;
+    margin-top: 7px;
+}
+
+.brand-name {
+    margin-left: 15px !important;
+    font-weight: 400;
+}
+
+.nav-search-bar {
+    min-width: 300px;
+    width: 400px;
+}
+
+#guestMenu {
+    margin-top: 8px;
+}
+
+#userMenu {
+    margin-top: 17px;
+}
+
+#addArticleAction {
+    margin-top: 8px;
 }
