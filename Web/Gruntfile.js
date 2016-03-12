@@ -12,6 +12,15 @@ module.exports = function(grunt) {
 				dest: 'target/css/main.css'
 			}
 		},
+		web_server: {
+		    options: {
+		      cors: true,
+		      port: 8000,
+		      nevercache: true,
+		      logRequests: true
+		    },
+		    foo: 'bar' // For some reason an extra key with a non-object value is necessary
+  	},
 		uglify: {
 			'target/js/main.min.js': ['target/js/main.js']
 		},
@@ -46,7 +55,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-web-server');
 
-	grunt.registerTask('default', ['copy', 'concat', 'uglify', 'cssmin']);
+	grunt.registerTask('default', ['copy', 'concat', 'uglify', 'cssmin', 'web_server']);
 
 };
