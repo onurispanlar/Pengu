@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ui.router']);
+var app = angular.module('app', ['ngRoute', 'ui.router', 'article', 'book', 'author']);
 
 app.config(['$stateProvider', function($stateProvider) {
   $stateProvider
@@ -18,17 +18,17 @@ app.config(['$stateProvider', function($stateProvider) {
       templateUrl: "templates/signup/signup.html"
     })
     .state('app.article', {
-      url: "/article",
+      url: "article",
       controller: "articleController",
       templateUrl: "templates/article/article.html"
     })
     .state('app.book', {
-      url: "/book",
+      url: "book",
       controller: "bookController",
       templateUrl: "templates/book/book.html"
     })
     .state('app.author', {
-      url: "/author",
+      url: "author",
       controller: "authorController",
       templateUrl: "templates/author/author.html"
     });
