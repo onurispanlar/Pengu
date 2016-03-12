@@ -5,39 +5,39 @@ module.exports = function(grunt) {
 		concat: {
 			js: {
 				src: 'src/js/**/*.js',
-				dest: '../../Web/js/main.js'
+				dest: 'target/js/main.js'
 			},
 			css: {
 				src: 'src/css/*.css',
-				dest: '../../Web/css/main.css'
+				dest: 'target/css/main.css'
 			}
 		},
 		uglify: {
-			'../../Web/js/main.min.js': ['../../Web/js/main.js']
+			'target/js/main.min.js': ['target/js/main.js']
 		},
 		copy: {
 			img: {
 				expand: true,
 				src: 'src/img/*',
-				dest: '../../Web/img',
+				dest: 'target/img',
 				flatten: true
 			},
 			html: {
 				cwd: 'src/js/',
 				src: '**/*.html',
-				dest: '../../Web/templates/',
+				dest: 'target/templates/',
 				expand: true
 			},
 			index: {
 				expand: true,
 				src: ['src/*.html'],
-				dest: '../../Web/',
+				dest: 'target/',
 				filter: 'isFile',
 				flatten: true
 			}
 		},
 		cssmin: {
-			'../../Web/css/main.min.css': '../../Web/css/main.css'
+			'target/css/main.min.css': 'target/css/main.css'
 		}
 	});
 

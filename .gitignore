@@ -1,6 +1,6 @@
 Web/www/
 Web/node_modules/
+Web/target/
 Applications/YuruyenUcak/node_modules
 Applications/YuruyenUcak/npm-debug.log
 Web/npm-debug.log
-
