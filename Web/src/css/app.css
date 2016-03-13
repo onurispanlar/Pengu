@@ -33,3 +33,19 @@ body {
 .slogan {
     height: 100%;
 }
+
+.topMenu {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+.rightPane {
+    margin-top: 10px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 0 15px;
+}
