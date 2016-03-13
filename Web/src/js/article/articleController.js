@@ -6,4 +6,5 @@ angular.module('article', []).controller('articleController', ['$scope', functio
         likeCount: 2,
         viewCount: 0
     };
+    this.article = $scope.article;
 }]);
