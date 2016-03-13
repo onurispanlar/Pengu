@@ -42,10 +42,26 @@ body {
 
 .rightPane {
     margin-top: 10px;
+    min-height: 800px;
+}
+
+.listTitleItems {
+    font-family: helvetica;
+    font-weight: bold;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #5bc0de;
+}
+
+.tabLikeBorder {
+    border-bottom: 1px solid #ddd;
 }
 
 .nav>li>a {
     position: relative;
     display: block;
     padding: 0 15px;
+    color: #5bc0de;
 }

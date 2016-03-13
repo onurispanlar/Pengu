@@ -1,17 +1,13 @@
 <div class="content">
-  <div class="row">
-    <div class="pull-right col-xs-6">
-      <div class="col-xs-3"> trending
-      </div>
-      <div class="col-xs-3"> new
-      </div>
-      <div class="col-xs-3"> most read
-      </div>
-      <div class="col-xs-3"> a-z
-      </div>
+    <div class="pull-right articleRightMenu tabLikeBorder">
+      <ul id="articleTabs" class="nav nav-tabs">
+          <li class="active"><a href="#">trending</a></li>
+          <li><a>hot</a></li>
+          <li><a>most read</a></li>
+          <li><a>a-z</a></li>
+      </ul>
     </div>
-  </div>
-  <div class="row">
+  <!--<div class="row listTitleItems">
     <div class="col-xs-3">
       <div class="row">
         <div class="col-xs-3">
@@ -31,33 +27,37 @@
     <div class="col-xs-8">
       Title / Author
     </div>
-  </div>
-  <div ng-repeat="article in articleList">
+  </div>-->
+  <div id="articleItems" ng-repeat="article in articleList">
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-xs-4">
         <div>
           <div class="col-xs-3">
-            {{article.percent}}
+            {{article.percent}} %
+            <br />
+            Goal Progress
           </div>
           <div class="col-xs-3">
             {{article.likeCount}}
+            <br />
+            Likes
           </div>
           <div class="col-xs-3">
             {{article.viewCount}}
+            <br />
+            Views
           </div>
           <div class="col-xs-3">
-            {{article.image}}
+            {{article.type}}
           </div>
         </div>
       </div>
       <div class="col-xs-8">
-        <div class="row">
-          <div class="col-xs-12">
+        <div class="articleTitle">
             {{article.title}}
-          </div>
         </div>
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-xs-12 authorName">
             {{article.author}}
           </div>
         </div>
