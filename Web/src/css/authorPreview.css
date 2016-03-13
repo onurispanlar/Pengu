@@ -1,0 +1,23 @@
+.authorPreviewName {
+    line-height: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: x-large;
+    color: #337ab7;
+}
+
+.authorPP {
+    background: url(../img/ppholder.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 200px;
+}
+
+.authorBio {
+    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0;
+}
+
+.authorTags {
+    border-bottom: 1px solid #f0f0f0;
+}
