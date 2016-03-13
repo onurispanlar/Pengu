@@ -17,23 +17,23 @@ app.config(['$stateProvider', function($stateProvider) {
       controller: "signupController",
       templateUrl: "templates/signup/signup.html"
     })
-    .state('app.article', {
-      url: "article",
+    .state('app.articleList', {
+      url: "articleList",
       controller: "articleController",
-      templateUrl: "templates/article/article.html"
+      templateUrl: "templates/article/articleList.html"
     })
-    .state('app.book', {
-      url: "book",
+    .state('app.bookList', {
+      url: "bookList",
       controller: "bookController",
-      templateUrl: "templates/book/book.html"
+      templateUrl: "templates/book/bookList.html"
     })
-    .state('app.author', {
-      url: "author",
+    .state('app.authorList', {
+      url: "authorList",
       controller: "authorController",
-      templateUrl: "templates/author/author.html"
+      templateUrl: "templates/author/authorList.html"
     });
 }]).run(["$state",
   function($state) {
-    $state.go('app.article');
+    $state.go('app.articleList');
   }
 ]);
