@@ -17,6 +17,11 @@ app.config(['$stateProvider', function($stateProvider) {
       controller: "signupController",
       templateUrl: "templates/signup/signup.html"
     })
+    .state('authorPreview', {
+      url: "/author/:id",
+      controller: "authorController",
+      templateUrl: "templates/author/authorPreview.html"
+    })
     .state('app.articleList', {
       url: "articleList",
       controller: "articleController",
@@ -31,6 +36,16 @@ app.config(['$stateProvider', function($stateProvider) {
       url: "authorList",
       controller: "authorController",
       templateUrl: "templates/author/authorList.html"
+    })
+    .state('authorPreview.authorList', {
+      url: "/articleList",
+      controller: "articleController",
+      templateUrl: "templates/article/articleList.html"
+    })
+    .state('authorPreview.bookList', {
+      url: "/bookList",
+      controller: "bookController",
+      templateUrl: "templates/book/bookList.html"
     });
 }]).run(["$state",
   function($state) {
