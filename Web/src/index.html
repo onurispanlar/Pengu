@@ -13,7 +13,16 @@
 <body>
 
     <navbar></navbar>
-    <div class="col-xs-8 col-offset-1" ui-view></div>
+    <div class="contentHolder">
+        <div class="headerHolder">Cloud Osman</div>
+        <div class="row">
+            <div class="col-xs-1">&nbsp;</div>
+            <div class="ui-view-holder col-xs-10">
+                <div ui-view></div>
+            </div>
+            <div class="col-xs-1">&nbsp;</div>
+        </div>
+    </div>
     <footer></footer>
 
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
