@@ -1,0 +1,20 @@
+.authorName {
+    color: #6F6A6A;
+    font-weight: bold;
+}
+
+#articleTabs {
+    border-bottom: 0px;
+}
+
+#articleItems {
+    overflow: hidden;
+    padding: 15px 0;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.articleTitle {
+    color: #277789;
+}

@@ -1,16 +1,16 @@
 <div class="main-layout">
   <div class="row">
-    <div class="col-xs-8">
-      <div class="col-xs-4">
-        <a ui-sref=".articleList">ARTICLE</a>
+    <div class="col-xs-10 listArea">
+      <div class="topMenu">
+        <div class="listSelectorNames">
+            <ul class="nav nav-pills">
+                <li><a ui-sref=".articleList">ARTICLE</a></li>
+                <li><a ui-sref=".bookList">BOOK</a></li>
+                <li><a ui-sref=".authorList">AUTHOR</a></li>
+            </ul>
+        </div>
       </div>
-      <div class="col-xs-4">
-        <a ui-sref=".bookList">BOOK</a>
-      </div>
-      <div class="col-xs-4">
-        <a ui-sref=".authorList">AUTHOR</a>
-      </div>
+      <div class="col-xs-12" ui-view=""></div>
     </div>
-  </div>
-  <div class="col-xs-12" ui-view=""></div>
+    <div class="col-xs-2 rightPane">Merhaba ben sağ alan</div>
 </div>
