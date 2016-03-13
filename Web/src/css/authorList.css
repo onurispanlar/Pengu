@@ -1,0 +1,15 @@
+#authorTabs {
+    border-bottom: 0px;
+}
+
+#authorItems {
+    overflow: hidden;
+    padding: 15px 0;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.authorListName {
+    color: #277789;
+}

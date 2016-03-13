@@ -32,7 +32,7 @@ angular.module('article', []).controller('articleController', ['$scope', functio
         }
     }
 
-    $('ul.nav.nav-tabs > li').click(function(e) {
+    $('.articleRightMenu > ul > li').click(function(e) {
         removeActiveListSelector();
         $(this).addClass('active');
     });
