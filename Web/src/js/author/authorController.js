@@ -19,4 +19,18 @@ angular.module('author', []).controller('authorController', ['$scope', function(
     viewCount: 8569,
     chapterCount: 9
   }];
+
+  function removeActiveListSelector() {
+      var liElements = $(".authorRightMenu > ul > li"),
+          index;
+      for (index = 0; index < liElements.length; index++) {
+          $(liElements[index]).removeClass('active');
+      }
+  }
+
+  $('.authorRightMenu > ul > li').click(function(e) {
+      removeActiveListSelector();
+      $(this).addClass('active');
+  });
+
 }]);

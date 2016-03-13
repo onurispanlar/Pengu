@@ -57,6 +57,7 @@ body {
 
 .tabLikeBorder {
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
 
 .nav>li>a {
