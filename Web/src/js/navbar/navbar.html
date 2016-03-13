@@ -21,14 +21,49 @@
     </form>
     <div class="nav navbar-nav navbar-right">
       <div id="authActions" class="col-xs-9">
-        <div id="userMenu" ng-hide="nav.isLoggedIn()">
+        <div id="userMenu" ng-show="isLoggedIn">
           <div class="col-xs-3 glyphicon glyphicon-bell notification"></div>
           <div class="col-xs-3 glyphicon glyphicon-envelope"></div>
           <div class="col-xs-6">Profile</div>
         </div>
-        <div id="guestMenu" ng-show="nav.isLoggedIn()">
-          <div class="btn btn-default col-xs-6">Sign up</div>
-          <div class="btn btn-primary col-xs-5 col-xs-offset-1">Login</div>
+        <div id="guestMenu" ng-show="!isLoggedIn">
+          <div class="col-xs-6 dropdown">
+            <div class="btn btn-default dropdown-toggle" data-toggle="dropdown">Sign up</div>
+            <div class="dropdown-menu dropdown-menu" role="dialog">
+              <div class="signin-dialog-body">
+                <form method="post">
+                  <div>
+                    <input type="text" class="col-xs-8 col-offset-1" placeholder="Email">
+                  </div>
+
+                  <div>
+                    <input type="password" class="col-xs-8 col-offset-1" placeholder="Password">
+                  </div>
+                  <div>
+                    <div role="button" class="col-xs-8 col-offset-1 btn btn-default">Sign up</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-5 col-xs-offset-1 dropdown">
+            <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Login</div>
+            <div class="dropdown-menu dropdown-menu" role="dialog">
+              <div class="login-dialog-body">
+                <form method="post">
+                  <div>
+                    <input type="text" class="col-xs-8 col-offset-1" placeholder="Email">
+                  </div>
+
+                  <div>
+                    <input type="password" class="col-xs-8 col-offset-1" placeholder="Password">
+                  </div>
+                  <div>
+                    <div role="button" class="col-xs-8 col-offset-1 btn btn-primary">Login</div>
+                  </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
       <div id="addArticleAction" type="button" class="btn btn-default col-xs-3">
@@ -36,5 +71,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>
