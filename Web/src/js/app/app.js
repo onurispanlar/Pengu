@@ -22,6 +22,11 @@ app.config(['$stateProvider', function($stateProvider) {
       controller: "authorController",
       templateUrl: "templates/author/authorPreview.html"
     })
+    .state('articlePreview', {
+      url: "/article/:id",
+      controller: "articleController",
+      templateUrl: "templates/article/articlePreview.html"
+    })
     .state('app.articleList', {
       url: "articleList",
       controller: "articleController",
