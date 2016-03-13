@@ -29,27 +29,27 @@ app.config(['$stateProvider', function($stateProvider) {
     })
     .state('app.articleList', {
       url: "articleList",
-      controller: "articleController",
+      controller: "articleListController",
       templateUrl: "templates/article/articleList.html"
     })
     .state('app.bookList', {
       url: "bookList",
-      controller: "bookController",
+      controller: "bookListController",
       templateUrl: "templates/book/bookList.html"
     })
     .state('app.authorList', {
       url: "authorList",
-      controller: "authorController",
+      controller: "authorListController",
       templateUrl: "templates/author/authorList.html"
     })
     .state('authorPreview.authorList', {
       url: "/articleList",
-      controller: "articleController",
+      controller: "articleListController",
       templateUrl: "templates/article/articleList.html"
     })
     .state('authorPreview.bookList', {
       url: "/bookList",
-      controller: "bookController",
+      controller: "bookListController",
       templateUrl: "templates/book/bookList.html"
     });
 }]).run(["$state",
